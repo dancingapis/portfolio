@@ -1,11 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#bcd8ea">
 <title>Barbara Taberska</title>
+<meta name="description" content="Barbara Taberska, Head of Marketing at Erend Space. Portfolio.">
+
 <!--
   HOW TO EDIT THE TEXT
   Search this file for "EDIT TEXT". Each marker sits right above one box of text.
   Change only the words between the tags, for example <p>like this</p>.
   Labels on the flowers are in the lines that start with <div class="fw"> (the text inside <span class="lb ...">).
 -->
-<meta name="claude:viewport-fit-sides" content="cover">
 <style>
 :root{
   --bg:#c1c6c9; --fg:#1d1d1d; --btn:#d9dcde; --btn-line:#a7acaf; --pn:#eeeeec; --pn-line:#8d9295; --link:#1a0dab;
@@ -89,10 +96,14 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 .covers img,.one{display:block;width:100%;height:auto}
 .one{max-width:300px;margin-bottom:8px}
 .foot{position:relative;z-index:5;text-align:center;font-size:11px;margin:-60px 0 0;color:#eef3df;text-shadow:0 1px 2px rgba(0,0,0,.35)}
-@media (max-width:620px){ :root{--k:.74} .lb{font-size:11px} }
+@media (max-width:620px){ :root{--k:.74} .lb{font-size:11px} .row{gap:26px 22px;padding-bottom:56px} .bud{width:21px;height:23px;margin:-11px 0 0 -10px;font-size:10px} }
 @media (max-width:400px){ :root{--k:.64} }
 @media (prefers-reduced-motion: reduce){ .fl{transition:none} .fl:hover{transform:none} .fw{animation:none} }
 </style>
+<style>[hidden]{display:none!important}</style>
+</head>
+<body>
+
 
 <div class="wrap">
   <nav class="top" aria-label="More"><button type="button" class="tb" data-drop="writing" aria-expanded="false" aria-controls="dd-writing">writing (<span>+</span>)</button><button type="button" class="tb" data-drop="events" aria-expanded="false" aria-controls="dd-events">events (<span>+</span>)</button><button type="button" class="tb" data-drop="cv" aria-expanded="false" aria-controls="dd-cv">cv (<span>+</span>)</button></nav>
@@ -666,3 +677,6 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
   Array.prototype.forEach.call(document.querySelectorAll("img[data-img]"), function(im){ im.src = IMAGES[im.getAttribute("data-img")]; });
 })();
 </script>
+
+</body>
+</html>
