@@ -88,6 +88,16 @@ button{font:inherit;color:inherit;cursor:pointer}
 .bk span{font-size:11px;opacity:.9}
 .bk.big{width:150px;margin-bottom:10px}
 .bk.big b{font-size:16px}
+.tile{display:block;padding:0;border:0;background:none;cursor:pointer;text-align:left;color:inherit;font:inherit;width:100%}
+.tile:hover img,.tile:hover.bk{outline:3px solid #ffff00;outline-offset:2px}
+button.bk{border:0;text-align:left;cursor:pointer;font:inherit;width:100%}
+button.bk:hover{outline:3px solid #ffff00;outline-offset:2px}
+.lk{background:none;border:0;padding:0;font:inherit;color:var(--link);text-decoration:underline;cursor:pointer}
+.pn h3 .lk{font-weight:bold;color:inherit}
+.back{background:var(--btn);border:1px solid var(--btn-line);font-size:12px;padding:2px 8px;margin:-2px 0 4px}
+.inside{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:10px;border-top:1px solid var(--pn-line)}
+.inside .lab2{width:100%;font-size:12px;color:#666}
+.inside button{background:radial-gradient(circle at 38% 30%,#e3f0c2,#8fbf57 62%,#4f7d2f);border:0;border-radius:99px;padding:3px 10px;font-size:12px;color:#163008}
 .cov{display:block;width:100%;aspect-ratio:1/1;height:auto;object-fit:cover;box-shadow:2px 2px 0 rgba(0,0,0,.2)}
 .cov.big{width:180px;margin-bottom:10px}
 .albums{grid-template-columns:repeat(4,1fr)}
@@ -101,6 +111,7 @@ blockquote{margin:12px 0 0;padding:8px 10px;background:#ffb6c1;color:#222;font-f
 blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 .covers{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px;margin:8px 0 10px}
 .covers img,.one{display:block;width:100%;height:auto}
+.covers .tile:hover img{outline:3px solid #ffff00;outline-offset:2px}
 .one{max-width:300px;margin-bottom:8px}
 .shot{margin:10px 0 14px}
 .shot img{display:block;width:100%;height:auto;border:1px solid var(--pn-line)}
@@ -206,7 +217,7 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <!-- ===== EDIT TEXT: hivemind ===== -->
 <section class="pn" id="pn-hivemind" hidden aria-labelledby="h-hivemind">
 <h2 id="h-hivemind">hive mind</h2>
-<p class="big">900+</p>
+<p class="big"><button type="button" class="lk" data-open="hm-a" style="color:inherit;text-decoration:none">900+</button></p>
 <p>people use Hive Mind. We launched on Google Play on 10 April 2026 and went from 41 to 411 users in the first 12 days without spending anything on ads.</p>
 <h3>what I look after</h3>
 <ul>
@@ -217,13 +228,15 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <li>Push notifications that follow the beekeeping year in Poland</li>
 <li>Our Meta Ads agency. I decide what goes out.</li>
 </ul>
-<h3>CloudFerro Geospatial Innovation Competition 2025</h3>
+<h3><button type="button" class="lk" data-open="hm-c">CloudFerro Geospatial Innovation Competition 2025</button></h3>
 <p>Hive Mind won, together with SENSORBITE and SpaceFlow.ai. I wrote the LinkedIn post about it.</p>
+<div class="inside"><span class="lab2">inside this flower</span><button type="button" data-open="hm-a">a ... 900+ users</button><button type="button" data-open="hm-b">b ... 41 to 411</button><button type="button" data-open="hm-c">c ... a competition</button></div>
 </section>
 
 <!-- ===== EDIT TEXT: hm-a ===== -->
 <section class="pn" id="pn-hm-a" hidden aria-labelledby="h-hm-a">
 <h2 id="h-hm-a">a ... 900+ users</h2>
+<p><button type="button" class="back" data-open="hivemind">back to hive mind</button></p>
 <p class="big">900+</p>
 <p>Hive Mind users between April and October 2026.</p>
 </section>
@@ -231,6 +244,7 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <!-- ===== EDIT TEXT: hm-b ===== -->
 <section class="pn" id="pn-hm-b" hidden aria-labelledby="h-hm-b">
 <h2 id="h-hm-b">b ... 41 to 411</h2>
+<p><button type="button" class="back" data-open="hivemind">back to hive mind</button></p>
 <p class="big">41 &rarr; 411</p>
 <p>Users in our first 12 days on Google Play, 10 to 22 April 2026. No ad spend.</p>
 </section>
@@ -238,6 +252,7 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <!-- ===== EDIT TEXT: hm-c ===== -->
 <section class="pn" id="pn-hm-c" hidden aria-labelledby="h-hm-c">
 <h2 id="h-hm-c">c ... a competition</h2>
+<p><button type="button" class="back" data-open="hivemind">back to hive mind</button></p>
 <p>Hive Mind won CloudFerro&rsquo;s Geospatial Innovation Competition 2025, together with SENSORBITE and SpaceFlow.ai. I wrote the LinkedIn post about it.</p>
 </section>
 
@@ -323,18 +338,19 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <h2 id="h-p4">project4: carousels for beekeepers</h2>
 <p>Some of the carousels I made for @hivemind.aplikacja. They&rsquo;re in Polish, and most of them move on Instagram.</p>
 <div class="covers">
-<img data-img="c1" width="480" height="602" alt="Instagram carousel cover: Nie ma jeszcze końca lata!" loading="lazy">
-<img data-img="c2" width="480" height="602" alt="Instagram carousel cover: Siej tak, aby wszyscy się cieszyli." loading="lazy">
-<img data-img="c3" width="480" height="602" alt="Instagram carousel cover: Trzmiel czy trzmielec?" loading="lazy">
-<img data-img="c4" width="480" height="602" alt="Instagram carousel cover: Zapomniane polskie zapylacze" loading="lazy">
-<img data-img="c5" width="480" height="602" alt="Instagram carousel cover: Kosmos w Hive Mind to nie tylko dane z satelity" loading="lazy">
-<img data-img="c6" width="480" height="602" alt="Instagram carousel cover: Gdzie stoi ul sąsiada?" loading="lazy"></div>
+<button type="button" class="tile" data-open="ig-1" aria-label="open carousel 1"><img data-img="c1" width="480" height="602" alt="Instagram carousel cover: Nie ma jeszcze końca lata!" loading="lazy"></button>
+<button type="button" class="tile" data-open="ig-2" aria-label="open carousel 2"><img data-img="c2" width="480" height="602" alt="Instagram carousel cover: Siej tak, aby wszyscy się cieszyli." loading="lazy"></button>
+<button type="button" class="tile" data-open="ig-3" aria-label="open carousel 3"><img data-img="c3" width="480" height="602" alt="Instagram carousel cover: Trzmiel czy trzmielec?" loading="lazy"></button>
+<button type="button" class="tile" data-open="ig-4" aria-label="open carousel 4"><img data-img="c4" width="480" height="602" alt="Instagram carousel cover: Zapomniane polskie zapylacze" loading="lazy"></button>
+<button type="button" class="tile" data-open="ig-5" aria-label="open carousel 5"><img data-img="c5" width="480" height="602" alt="Instagram carousel cover: Kosmos w Hive Mind to nie tylko dane z satelity" loading="lazy"></button>
+<button type="button" class="tile" data-open="ig-6" aria-label="open carousel 6"><img data-img="c6" width="480" height="602" alt="Instagram carousel cover: Gdzie stoi ul sąsiada?" loading="lazy"></button></div>
 <p><a href="https://www.instagram.com/hivemind.aplikacja/" target="_blank" rel="noopener noreferrer">instagram.com/hivemind.aplikacja</a></p>
 </section>
 
 <!-- ===== EDIT TEXT: ig-1 ===== -->
 <section class="pn" id="pn-ig-1" hidden aria-labelledby="h-ig-1">
 <h2 id="h-ig-1">1 ... Nie ma jeszcze końca lata!</h2>
+<p><button type="button" class="back" data-open="p4">back to all carousels</button></p>
 <img class="one" data-img="c1" width="480" height="602" alt="Instagram carousel cover: Nie ma jeszcze końca lata!" loading="lazy"><p>Summer isn&rsquo;t over yet. It&rsquo;s September and the bees are still foraging, so on what?</p>
 <p><small>Animated on Instagram.</small></p>
 </section>
@@ -342,6 +358,7 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <!-- ===== EDIT TEXT: ig-2 ===== -->
 <section class="pn" id="pn-ig-2" hidden aria-labelledby="h-ig-2">
 <h2 id="h-ig-2">2 ... Siej tak, aby wszyscy się cieszyli.</h2>
+<p><button type="button" class="back" data-open="p4">back to all carousels</button></p>
 <img class="one" data-img="c2" width="480" height="602" alt="Instagram carousel cover: Siej tak, aby wszyscy się cieszyli." loading="lazy"><p>Which flowers are good for honey bees and which for wild bees.</p>
 <p><small>Animated on Instagram.</small></p>
 </section>
@@ -349,6 +366,7 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <!-- ===== EDIT TEXT: ig-3 ===== -->
 <section class="pn" id="pn-ig-3" hidden aria-labelledby="h-ig-3">
 <h2 id="h-ig-3">3 ... Trzmiel czy trzmielec?</h2>
+<p><button type="button" class="back" data-open="p4">back to all carousels</button></p>
 <img class="one" data-img="c3" width="480" height="602" alt="Instagram carousel cover: Trzmiel czy trzmielec?" loading="lazy"><p>A bumblebee and a cuckoo bumblebee look almost the same at first glance.</p>
 <p><small>Animated on Instagram.</small></p>
 </section>
@@ -356,12 +374,14 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <!-- ===== EDIT TEXT: ig-4 ===== -->
 <section class="pn" id="pn-ig-4" hidden aria-labelledby="h-ig-4">
 <h2 id="h-ig-4">4 ... Zapomniane polskie zapylacze</h2>
+<p><button type="button" class="back" data-open="p4">back to all carousels</button></p>
 <img class="one" data-img="c4" width="480" height="602" alt="Instagram carousel cover: Zapomniane polskie zapylacze" loading="lazy"><p>More than 490 bee species live in Poland, and most of them get no attention.</p>
 </section>
 
 <!-- ===== EDIT TEXT: ig-5 ===== -->
 <section class="pn" id="pn-ig-5" hidden aria-labelledby="h-ig-5">
 <h2 id="h-ig-5">5 ... Kosmos w Hive Mind to nie tylko dane z satelity</h2>
+<p><button type="button" class="back" data-open="p4">back to all carousels</button></p>
 <img class="one" data-img="c5" width="480" height="602" alt="Instagram carousel cover: Kosmos w Hive Mind to nie tylko dane z satelity" loading="lazy"><p>There&rsquo;s also the cosmos that grows in the garden, and it can surprise experienced beekeepers.</p>
 <p><small>Animated on Instagram.</small></p>
 </section>
@@ -369,6 +389,7 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <!-- ===== EDIT TEXT: ig-6 ===== -->
 <section class="pn" id="pn-ig-6" hidden aria-labelledby="h-ig-6">
 <h2 id="h-ig-6">6 ... Gdzie stoi ul sąsiada?</h2>
+<p><button type="button" class="back" data-open="p4">back to all carousels</button></p>
 <img class="one" data-img="c6" width="480" height="602" alt="Instagram carousel cover: Gdzie stoi ul sąsiada?" loading="lazy"><p>Where is the neighbour&rsquo;s hive, the thing every beekeeper wants to know.</p>
 <p><small>See it on Instagram.</small></p>
 </section>
@@ -414,163 +435,197 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
 <!-- ===== EDIT TEXT: skills ===== -->
 <section class="pn" id="pn-skills" hidden aria-labelledby="h-skills">
 <h2 id="h-skills">skills</h2>
-<h3>marketing</h3>
+<h3><button type="button" class="lk" data-open="sk-a">marketing</button></h3>
 <p class="tg"><span>Social media marketing</span><span>Marketing strategy</span><span>Meta Ads oversight</span><span>SEO</span><span>App store optimization</span><span>Copywriting</span><span>Creative writing</span><span>Editing</span><span>Newsletters</span><span>Sales</span><span>Customer service</span></p>
-<h3>web and code</h3>
+<h3><button type="button" class="lk" data-open="sk-b">web and code</button></h3>
 <p class="tg"><span>WordPress</span><span>Elementor</span><span>Polylang</span><span>Yoast SEO</span><span>Page speed</span><span>HTML</span><span>CSS</span><span>Supabase</span><span>Vercel</span><span>GitHub Actions</span><span>REST APIs</span><span>Python</span><span>SQL Server</span><span>Claude Code</span></p>
-<h3>writing and research</h3>
+<h3><button type="button" class="lk" data-open="sk-c">writing and research</button></h3>
 <p class="tg"><span>Technical writing</span><span>Step by step guides</span><span>FAQ and interface copy</span><span>Release notes</span><span>Fact checking</span><span>Data analysis</span><span>Explaining satellite data in plain language</span></p>
-<h3>tools and languages</h3>
+<h3><button type="button" class="lk" data-open="sk-d">tools and languages</button></h3>
 <p class="tg"><span>Adobe Creative Suite</span><span>Microsoft Office</span><span>ELAN Software</span><span>Polish</span><span>English, full professional</span><span>German, elementary</span><span>Spanish, elementary</span></p>
+<div class="inside"><span class="lab2">inside this flower</span><button type="button" data-open="sk-a">a ... marketing</button><button type="button" data-open="sk-b">b ... web and code</button><button type="button" data-open="sk-c">c ... writing and research</button><button type="button" data-open="sk-d">d ... tools and languages</button></div>
 </section>
 
 <!-- ===== EDIT TEXT: sk-a ===== -->
 <section class="pn" id="pn-sk-a" hidden aria-labelledby="h-sk-a">
 <h2 id="h-sk-a">a ... marketing</h2>
+<p><button type="button" class="back" data-open="skills">back to all skills</button></p>
 <p class="tg"><span>Social media marketing</span><span>Marketing strategy</span><span>Meta Ads oversight</span><span>SEO</span><span>App store optimization</span><span>Copywriting</span><span>Creative writing</span><span>Editing</span><span>Newsletters</span><span>Sales</span><span>Customer service</span></p>
 </section>
 
 <!-- ===== EDIT TEXT: sk-b ===== -->
 <section class="pn" id="pn-sk-b" hidden aria-labelledby="h-sk-b">
 <h2 id="h-sk-b">b ... web and code</h2>
+<p><button type="button" class="back" data-open="skills">back to all skills</button></p>
 <p class="tg"><span>WordPress</span><span>Elementor</span><span>Polylang</span><span>Yoast SEO</span><span>Page speed</span><span>HTML</span><span>CSS</span><span>Supabase</span><span>Vercel</span><span>GitHub Actions</span><span>REST APIs</span><span>Python</span><span>SQL Server</span><span>Claude Code</span></p>
 </section>
 
 <!-- ===== EDIT TEXT: sk-c ===== -->
 <section class="pn" id="pn-sk-c" hidden aria-labelledby="h-sk-c">
 <h2 id="h-sk-c">c ... writing and research</h2>
+<p><button type="button" class="back" data-open="skills">back to all skills</button></p>
 <p class="tg"><span>Technical writing</span><span>Step by step guides</span><span>FAQ and interface copy</span><span>Release notes</span><span>Fact checking</span><span>Data analysis</span><span>Explaining satellite data in plain language</span></p>
 </section>
 
 <!-- ===== EDIT TEXT: sk-d ===== -->
 <section class="pn" id="pn-sk-d" hidden aria-labelledby="h-sk-d">
 <h2 id="h-sk-d">d ... tools and languages</h2>
+<p><button type="button" class="back" data-open="skills">back to all skills</button></p>
 <p class="tg"><span>Adobe Creative Suite</span><span>Microsoft Office</span><span>ELAN Software</span><span>Polish</span><span>English, full professional</span><span>German, elementary</span><span>Spanish, elementary</span></p>
 </section>
 
 <!-- ===== EDIT TEXT: books ===== -->
 <section class="pn" id="pn-books" hidden aria-labelledby="h-books">
 <h2 id="h-books">my favourite books</h2>
-<div class="books"><div class="bk" style="--c:#7d8f6a"><b>The Wall</b><span>Marlen Haushofer</span></div>
-<div class="bk" style="--c:#b9a27a"><b>White Fang</b><span>Jack London</span></div>
-<div class="bk" style="--c:#8aa4c4"><b>Heaven</b><span>Mieko Kawakami</span></div>
-<div class="bk" style="--c:#e08a5a"><b>Pizza Girl</b><span>Jean Kyoung Frazier</span></div>
+<div class="books"><button type="button" class="bk" data-open="bk-1" style="--c:#7d8f6a" aria-label="open book 1"><b>The Wall</b><span>Marlen Haushofer</span></button>
+<button type="button" class="bk" data-open="bk-2" style="--c:#b9a27a" aria-label="open book 2"><b>White Fang</b><span>Jack London</span></button>
+<button type="button" class="bk" data-open="bk-3" style="--c:#8aa4c4" aria-label="open book 3"><b>Heaven</b><span>Mieko Kawakami</span></button>
+<button type="button" class="bk" data-open="bk-4" style="--c:#e08a5a" aria-label="open book 4"><b>Pizza Girl</b><span>Jean Kyoung Frazier</span></button>
 </div>
 <ul>
-<li><b>The Wall</b>, Marlen Haushofer (1963)</li>
-<li><b>White Fang</b>, Jack London (1906)</li>
-<li><b>Heaven</b>, Mieko Kawakami (2009, in English 2021)</li>
-<li><b>Pizza Girl</b>, Jean Kyoung Frazier (2020)</li>
+<li><button type="button" class="lk" data-open="bk-1"><b>The Wall</b></button>, Marlen Haushofer (1963)</li>
+<li><button type="button" class="lk" data-open="bk-2"><b>White Fang</b></button>, Jack London (1906)</li>
+<li><button type="button" class="lk" data-open="bk-3"><b>Heaven</b></button>, Mieko Kawakami (2009, in English 2021)</li>
+<li><button type="button" class="lk" data-open="bk-4"><b>Pizza Girl</b></button>, Jean Kyoung Frazier (2020)</li>
 </ul>
 </section>
 
 <!-- ===== EDIT TEXT: bk-1 ===== -->
 <section class="pn" id="pn-bk-1" hidden aria-labelledby="h-bk-1">
 <h2 id="h-bk-1">1 ... The Wall</h2>
+<p><button type="button" class="back" data-open="books">back to all books</button></p>
 <div class="bk big" style="--c:#7d8f6a"><b>The Wall</b><span>Marlen Haushofer</span></div>
 <p><b>The Wall</b>, Marlen Haushofer (1963)</p>
 <p>A woman wakes up in a hunting lodge in the Austrian mountains and finds herself cut off from the rest of the world by an invisible wall.</p>
+<p><small><a href="https://www.empik.com/the-wall-marlen-haushofer,p1506991771,ksiazka-p" target="_blank" rel="noopener noreferrer">The Wall on Empik</a></small></p>
 </section>
 
 <!-- ===== EDIT TEXT: bk-2 ===== -->
 <section class="pn" id="pn-bk-2" hidden aria-labelledby="h-bk-2">
 <h2 id="h-bk-2">2 ... White Fang</h2>
+<p><button type="button" class="back" data-open="books">back to all books</button></p>
 <div class="bk big" style="--c:#b9a27a"><b>White Fang</b><span>Jack London</span></div>
 <p><b>White Fang</b>, Jack London (1906)</p>
 <p>A wolfdog grows up in the wild Yukon and slowly learns to live with people.</p>
+<p><small><a href="https://en.wikipedia.org/wiki/White_Fang" target="_blank" rel="noopener noreferrer">read more on Wikipedia</a></small></p>
 </section>
 
 <!-- ===== EDIT TEXT: bk-3 ===== -->
 <section class="pn" id="pn-bk-3" hidden aria-labelledby="h-bk-3">
 <h2 id="h-bk-3">3 ... Heaven</h2>
+<p><button type="button" class="back" data-open="books">back to all books</button></p>
 <div class="bk big" style="--c:#8aa4c4"><b>Heaven</b><span>Mieko Kawakami</span></div>
 <p><b>Heaven</b>, Mieko Kawakami (2009, in English 2021)</p>
 <p>Two bullied fourteen year olds in Japan find each other and become friends.</p>
+<p><small><a href="https://en.wikipedia.org/wiki/Heaven_(Kawakami_novel)" target="_blank" rel="noopener noreferrer">read more on Wikipedia</a></small></p>
 </section>
 
 <!-- ===== EDIT TEXT: bk-4 ===== -->
 <section class="pn" id="pn-bk-4" hidden aria-labelledby="h-bk-4">
 <h2 id="h-bk-4">4 ... Pizza Girl</h2>
+<p><button type="button" class="back" data-open="books">back to all books</button></p>
 <div class="bk big" style="--c:#e08a5a"><b>Pizza Girl</b><span>Jean Kyoung Frazier</span></div>
 <p><b>Pizza Girl</b>, Jean Kyoung Frazier (2020)</p>
 <p>An eighteen year old, pregnant pizza delivery girl in Los Angeles gets fixated on one of her customers.</p>
+<p><small><a href="https://lubimyczytac.pl/ksiazka/5040012/pizza-girl" target="_blank" rel="noopener noreferrer">Pizza Girl on lubimyczytac.pl</a></small></p>
 </section>
 
 <!-- ===== EDIT TEXT: albums ===== -->
 <section class="pn" id="pn-albums" hidden aria-labelledby="h-albums">
 <h2 id="h-albums">my favourite albums</h2>
-<div class="books albums"><img class="cov" data-img="al1" width="360" height="360" alt="Album cover: Music, Fashion, Film by Charli XCX" loading="lazy">
-<img class="cov" data-img="al2" width="360" height="360" alt="Album cover: Trans Misja by Reni Jusis" loading="lazy">
-<img class="cov" data-img="al3" width="360" height="360" alt="Album cover: viagr aboys by Viagra Boys" loading="lazy">
-<img class="cov" data-img="al4" width="360" height="360" alt="Album cover: Skinty Fia by Fontaines D.C." loading="lazy">
-<img class="cov" data-img="al5" width="360" height="360" alt="Album cover: Diamond Eyes by Deftones" loading="lazy">
-<img class="cov" data-img="al6" width="360" height="360" alt="Album cover: Ultraviolence by Lana Del Rey" loading="lazy">
-<img class="cov" data-img="al7" width="360" height="360" alt="Album cover: Dirt by Jim E. Brown" loading="lazy">
+<div class="books albums"><button type="button" class="tile" data-open="al-1" aria-label="open album 1"><img class="cov" data-img="al1" width="360" height="360" alt="Album cover: Music, Fashion, Film by Charli XCX" loading="lazy"></button>
+<button type="button" class="tile" data-open="al-2" aria-label="open album 2"><img class="cov" data-img="al2" width="360" height="360" alt="Album cover: Trans Misja by Reni Jusis" loading="lazy"></button>
+<button type="button" class="tile" data-open="al-3" aria-label="open album 3"><img class="cov" data-img="al3" width="360" height="360" alt="Album cover: viagr aboys by Viagra Boys" loading="lazy"></button>
+<button type="button" class="tile" data-open="al-4" aria-label="open album 4"><img class="cov" data-img="al4" width="360" height="360" alt="Album cover: Skinty Fia by Fontaines D.C." loading="lazy"></button>
+<button type="button" class="tile" data-open="al-5" aria-label="open album 5"><img class="cov" data-img="al5" width="360" height="360" alt="Album cover: Diamond Eyes by Deftones" loading="lazy"></button>
+<button type="button" class="tile" data-open="al-6" aria-label="open album 6"><img class="cov" data-img="al6" width="360" height="360" alt="Album cover: Ultraviolence by Lana Del Rey" loading="lazy"></button>
+<button type="button" class="tile" data-open="al-7" aria-label="open album 7"><img class="cov" data-img="al7" width="360" height="360" alt="Album cover: Dirt by Jim E. Brown" loading="lazy"></button>
 </div>
 <ul>
-<li><b>Music, Fashion, Film</b>, Charli XCX (2026)<br><small><a href="https://www.youtube.com/watch?v=eO3zsYsDnbI" target="_blank" rel="noopener noreferrer">listen to Camera on YouTube</a></small></li>
-<li><b>Trans Misja</b>, Reni Jusis (2003)<br><small><a href="https://www.youtube.com/watch?v=l-OHz9bJAc8" target="_blank" rel="noopener noreferrer">listen to Wynurzam się on YouTube</a></small></li>
-<li><b>viagr aboys</b>, Viagra Boys (2025)<br><small><a href="https://www.youtube.com/watch?v=9kWgvEKIo4c" target="_blank" rel="noopener noreferrer">listen to Uno II on YouTube</a></small></li>
-<li><b>Skinty Fia</b>, Fontaines D.C. (2022)<br><small><a href="https://www.youtube.com/watch?v=CkK1c-pvaCI" target="_blank" rel="noopener noreferrer">listen to Nabokov on YouTube</a></small></li>
-<li><b>Diamond Eyes</b>, Deftones (2010)<br><small><a href="https://www.youtube.com/watch?v=f0pdwd0miqs" target="_blank" rel="noopener noreferrer">listen to Sextape on YouTube</a></small></li>
-<li><b>Ultraviolence</b>, Lana Del Rey (2014)<br><small><a href="https://www.youtube.com/watch?v=oKxuiw3iMBE" target="_blank" rel="noopener noreferrer">listen to West Coast on YouTube</a></small></li>
-<li><b>Dirt</b>, Jim E. Brown<br><small><a href="https://www.youtube.com/watch?v=j_WgsVkqjkM" target="_blank" rel="noopener noreferrer">listen to I Had a Psychotic Episode in a Brighton Travelodge After Meeting Grian from Fontaines D.C. on YouTube</a></small></li>
+<li><button type="button" class="lk" data-open="al-1"><b>Music, Fashion, Film</b></button>, Charli XCX (2026)<br><small><a href="https://www.youtube.com/watch?v=eO3zsYsDnbI" target="_blank" rel="noopener noreferrer">listen to Camera on YouTube</a></small></li>
+<li><button type="button" class="lk" data-open="al-2"><b>Trans Misja</b></button>, Reni Jusis (2003)<br><small><a href="https://www.youtube.com/watch?v=l-OHz9bJAc8" target="_blank" rel="noopener noreferrer">listen to Wynurzam się on YouTube</a></small></li>
+<li><button type="button" class="lk" data-open="al-3"><b>viagr aboys</b></button>, Viagra Boys (2025)<br><small><a href="https://www.youtube.com/watch?v=9kWgvEKIo4c" target="_blank" rel="noopener noreferrer">listen to Uno II on YouTube</a></small></li>
+<li><button type="button" class="lk" data-open="al-4"><b>Skinty Fia</b></button>, Fontaines D.C. (2022)<br><small><a href="https://www.youtube.com/watch?v=CkK1c-pvaCI" target="_blank" rel="noopener noreferrer">listen to Nabokov on YouTube</a></small></li>
+<li><button type="button" class="lk" data-open="al-5"><b>Diamond Eyes</b></button>, Deftones (2010)<br><small><a href="https://www.youtube.com/watch?v=f0pdwd0miqs" target="_blank" rel="noopener noreferrer">listen to Sextape on YouTube</a></small></li>
+<li><button type="button" class="lk" data-open="al-6"><b>Ultraviolence</b></button>, Lana Del Rey (2014)<br><small><a href="https://www.youtube.com/watch?v=oKxuiw3iMBE" target="_blank" rel="noopener noreferrer">listen to West Coast on YouTube</a></small></li>
+<li><button type="button" class="lk" data-open="al-7"><b>Dirt</b></button>, Jim E. Brown (2026)<br><small><a href="https://www.youtube.com/watch?v=j_WgsVkqjkM" target="_blank" rel="noopener noreferrer">listen to I Had a Psychotic Episode in a Brighton Travelodge After Meeting Grian from Fontaines D.C. on YouTube</a></small></li>
 </ul>
 </section>
 
 <!-- ===== EDIT TEXT: al-1 ===== -->
 <section class="pn" id="pn-al-1" hidden aria-labelledby="h-al-1">
 <h2 id="h-al-1">1 ... Music, Fashion, Film</h2>
+<p><button type="button" class="back" data-open="albums">back to all albums</button></p>
 <img class="cov big" data-img="al1" width="360" height="360" alt="Album cover: Music, Fashion, Film by Charli XCX" loading="lazy">
 <p><b>Music, Fashion, Film</b>, Charli XCX (2026)</p>
+<p>Charli XCX&rsquo;s eighth album, out on 24 July 2026 on Atlantic. She made it in Paris with A. G. Cook and Finn Keane: pop with distorted guitars and a bit of electronic rock, about fame and her pop star persona. It comes with a film that has visuals for all 11 songs. The cover is a photo by Zamiri of John Cale, Marc Jacobs and Martin Scorsese in a kitchen. It went to number one in the UK, and Camera was its fourth single.</p>
+<p><small><a href="https://en.wikipedia.org/wiki/Music,_Fashion,_Film" target="_blank" rel="noopener noreferrer">read more on Wikipedia</a></small></p>
 <p><a href="https://www.youtube.com/watch?v=eO3zsYsDnbI" target="_blank" rel="noopener noreferrer">listen to Camera on YouTube</a></p>
 </section>
 
 <!-- ===== EDIT TEXT: al-2 ===== -->
 <section class="pn" id="pn-al-2" hidden aria-labelledby="h-al-2">
 <h2 id="h-al-2">2 ... Trans Misja</h2>
+<p><button type="button" class="back" data-open="albums">back to all albums</button></p>
 <img class="cov big" data-img="al2" width="360" height="360" alt="Album cover: Trans Misja by Reni Jusis" loading="lazy">
 <p><b>Trans Misja</b>, Reni Jusis (2003)</p>
+<p>Reni Jusis&rsquo;s fourth album, out on 23 August 2003 on Pomaton EMI and produced with Micha&#322; Przytu&#322;a. An electronic dance record that looks back to the electropop of the 70s and 80s. It won a Fryderyk for album of the year in the dance and electronic category and got to number 4 in Poland.</p>
+<p><small><a href="https://en.wikipedia.org/wiki/Trans_Misja" target="_blank" rel="noopener noreferrer">read more on Wikipedia</a></small></p>
 <p><a href="https://www.youtube.com/watch?v=l-OHz9bJAc8" target="_blank" rel="noopener noreferrer">listen to Wynurzam się on YouTube</a></p>
 </section>
 
 <!-- ===== EDIT TEXT: al-3 ===== -->
 <section class="pn" id="pn-al-3" hidden aria-labelledby="h-al-3">
 <h2 id="h-al-3">3 ... viagr aboys</h2>
+<p><button type="button" class="back" data-open="albums">back to all albums</button></p>
 <img class="cov big" data-img="al3" width="360" height="360" alt="Album cover: viagr aboys by Viagra Boys" loading="lazy">
 <p><b>viagr aboys</b>, Viagra Boys (2025)</p>
+<p>The fourth Viagra Boys album, out on 25 April 2025 on the band&rsquo;s own label, Shrimptech Enterprises, and produced with Pelle Gunnerfeldt. Uno II was the second single, and it&rsquo;s named after Sebastian Murphy&rsquo;s Italian greyhound. The album got to number 7 in Sweden.</p>
+<p><small><a href="https://en.wikipedia.org/wiki/Viagr_Aboys" target="_blank" rel="noopener noreferrer">read more on Wikipedia</a></small></p>
 <p><a href="https://www.youtube.com/watch?v=9kWgvEKIo4c" target="_blank" rel="noopener noreferrer">listen to Uno II on YouTube</a></p>
 </section>
 
 <!-- ===== EDIT TEXT: al-4 ===== -->
 <section class="pn" id="pn-al-4" hidden aria-labelledby="h-al-4">
 <h2 id="h-al-4">4 ... Skinty Fia</h2>
+<p><button type="button" class="back" data-open="albums">back to all albums</button></p>
 <img class="cov big" data-img="al4" width="360" height="360" alt="Album cover: Skinty Fia by Fontaines D.C." loading="lazy">
 <p><b>Skinty Fia</b>, Fontaines D.C. (2022)</p>
+<p>The third Fontaines D.C. album, out on 22 April 2022 on Partisan and produced by Dan Carey. The title is an old Irish saying, &ldquo;the damnation of the deer&rdquo;, and the cover nods to the extinct Irish elk. It was their first number one in Ireland and the UK, and the band won the Brit Award for International Group in 2023.</p>
+<p><small><a href="https://en.wikipedia.org/wiki/Skinty_Fia" target="_blank" rel="noopener noreferrer">read more on Wikipedia</a></small></p>
 <p><a href="https://www.youtube.com/watch?v=CkK1c-pvaCI" target="_blank" rel="noopener noreferrer">listen to Nabokov on YouTube</a></p>
 </section>
 
 <!-- ===== EDIT TEXT: al-5 ===== -->
 <section class="pn" id="pn-al-5" hidden aria-labelledby="h-al-5">
 <h2 id="h-al-5">5 ... Diamond Eyes</h2>
+<p><button type="button" class="back" data-open="albums">back to all albums</button></p>
 <img class="cov big" data-img="al5" width="360" height="360" alt="Album cover: Diamond Eyes by Deftones" loading="lazy">
 <p><b>Diamond Eyes</b>, Deftones (2010)</p>
+<p>The sixth Deftones album, out on 4 May 2010 on Reprise and produced by Nick Raskulinecz. The band made it after shelving an earlier album, Eros, when bassist Chi Cheng was badly hurt in a car accident in 2008. It&rsquo;s the first album with Sergio Vega on bass. Sextape came out as the third single in October 2010, and the album started at number 6 on the Billboard 200.</p>
+<p><small><a href="https://en.wikipedia.org/wiki/Diamond_Eyes" target="_blank" rel="noopener noreferrer">read more on Wikipedia</a></small></p>
 <p><a href="https://www.youtube.com/watch?v=f0pdwd0miqs" target="_blank" rel="noopener noreferrer">listen to Sextape on YouTube</a></p>
 </section>
 
 <!-- ===== EDIT TEXT: al-6 ===== -->
 <section class="pn" id="pn-al-6" hidden aria-labelledby="h-al-6">
 <h2 id="h-al-6">6 ... Ultraviolence</h2>
+<p><button type="button" class="back" data-open="albums">back to all albums</button></p>
 <img class="cov big" data-img="al6" width="360" height="360" alt="Album cover: Ultraviolence by Lana Del Rey" loading="lazy">
 <p><b>Ultraviolence</b>, Lana Del Rey (2014)</p>
+<p>Lana Del Rey&rsquo;s album from June 2014, on Polydor and Interscope, mostly produced by Dan Auerbach. It moved her from the sound of Born to Die towards slow, guitar heavy psychedelic rock. West Coast was the lead single, and the album was her first number one in the US.</p>
+<p><small><a href="https://en.wikipedia.org/wiki/Ultraviolence_(album)" target="_blank" rel="noopener noreferrer">read more on Wikipedia</a></small></p>
 <p><a href="https://www.youtube.com/watch?v=oKxuiw3iMBE" target="_blank" rel="noopener noreferrer">listen to West Coast on YouTube</a></p>
 </section>
 
 <!-- ===== EDIT TEXT: al-7 ===== -->
 <section class="pn" id="pn-al-7" hidden aria-labelledby="h-al-7">
 <h2 id="h-al-7">7 ... Dirt</h2>
+<p><button type="button" class="back" data-open="albums">back to all albums</button></p>
 <img class="cov big" data-img="al7" width="360" height="360" alt="Album cover: Dirt by Jim E. Brown" loading="lazy">
-<p><b>Dirt</b>, Jim E. Brown</p>
+<p><b>Dirt</b>, Jim E. Brown (2026)</p>
+<p>The latest record by Jim E. Brown, a Manchester singer-songwriter, out in May 2026. The video for I Had a Psychotic Episode in a Brighton Travelodge After Meeting Grian from Fontaines D.C. was filmed by Andy Burns.</p>
+<p><small><a href="https://jimebrown.bandcamp.com/" target="_blank" rel="noopener noreferrer">Jim E. Brown on Bandcamp</a></small></p>
 <p><a href="https://www.youtube.com/watch?v=j_WgsVkqjkM" target="_blank" rel="noopener noreferrer">listen to I Had a Psychotic Episode in a Brighton Travelodge After Meeting Grian from Fontaines D.C. on YouTube</a></p>
 </section>
 
@@ -727,7 +782,8 @@ blockquote small{font-family:Arial,Helvetica,sans-serif;font-size:11px}
     var pn = document.getElementById('pn-' + id); if(!pn){ return; }
     Array.prototype.forEach.call(document.querySelectorAll('.pn'), function(x){ x.hidden = x !== pn; });
     document.getElementById('box').setAttribute('aria-labelledby', 'h-' + id);
-    last = from; ov.hidden = false; ov.scrollTop = 0;
+    if(!(from && document.getElementById('box').contains(from))){ last = from; }
+    ov.hidden = false; ov.scrollTop = 0;
     document.documentElement.style.overflow = 'hidden';
     document.getElementById('x').focus();
   }
